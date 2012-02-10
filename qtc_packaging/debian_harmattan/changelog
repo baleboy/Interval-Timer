@@ -1,5 +1,5 @@
-circuittimer (0.0.1) unstable; urgency=low
+circuittimer (1.0.0) unstable; urgency=low
 
-  * Initial Release.
+  * First release.
 
- -- unknown <baleboy@unknown>  Tue, 10 Jan 2012 21:20:05 +0200
+ -- Francesco Balestrieri <bale@balenet.com>  Thu, 09 Feb 2012 10:20:05 +0200

@@ -3,8 +3,8 @@ Encoding=UTF-8
 Version=1.0
 Type=Application
 Terminal=false
-Name=circuittimer
-Exec=/usr/bin/invoker --type=d -s /opt/circuittimer/bin/circuittimer
+Name=IntervalTimer
+Exec=/usr/bin/invoker --splash=/opt/circuittimer/images/splash.jpg --type=d -s /opt/circuittimer/bin/circuittimer
 Icon=/usr/share/icons/hicolor/80x80/apps/circuittimer80.png
 X-Window-Icon=
 X-HildonDesk-ShowInToolbar=true

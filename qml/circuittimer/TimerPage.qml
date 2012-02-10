@@ -17,7 +17,7 @@ Page {
         myTimer.repeatCount = 1
         myTimer.start()
         myTimer.totalTime = mainPage.totalTime()
-        startSound.play()
+        myTimer.playSound(startSound)
     }
 
     orientationLock: PageOrientation.LockPortrait
@@ -41,23 +41,28 @@ Page {
 
     NotificationSound {
         id: startSound
-        source: settings.sounds === 1 ? "sounds/start.wav" : "sounds/beep2.wav"
+        source: settings.sounds === 1 ? "sounds/start.wav" : "sounds/longBeep.wav"
     }
 
     NotificationSound {
         id: stopSound
-        source: settings.sounds === 1 ? "sounds/stop.wav" : "sounds/beep2.wav"
+        source: settings.sounds === 1 ? "sounds/stop.wav" : "sounds/longBeep.wav"
     }
 
     NotificationSound {
         id: readySound
-        source: settings.sounds === 1 ? "sounds/getready.wav" : "sounds/beep1.wav"
+        source: settings.sounds === 1 ? "sounds/getready.wav" : "sounds/shortBeep.wav"
     }
 
 
     NotificationSound {
         id: almostSound
-        source: settings.sounds === 1 ? "sounds/almostdone.wav" : "sounds/beep1.wav"
+        source: settings.sounds === 1 ? "sounds/almostdone.wav" : "sounds/shortBeepSequence.wav"
+    }
+
+    NotificationSound {
+        id: switchSound
+        source: settings.sounds === 1 ? "sounds/switch.wav" : "sounds/longBeep.wav"
     }
 
     ScreenSaver {
@@ -168,20 +173,27 @@ Page {
                     playSound(almostSound)
             }
 
-            if (countDown < 5 && countDown > 0 && settings.sounds === 2 && timerPage.state === "exercising")
-                playSound(almostSound)
-
             if (countDown === 0) {
                 if (timerPage.state === "exercising") {
-                    playSound(stopSound)
+                    if (settings.breakTime !== 0 || repeatCount ===  settings.rounds)
+                        playSound(stopSound)
+                    else
+                        playSound(switchSound)
+
                     if (repeatCount ===  settings.rounds) {
                         parent.state = ""
                         stop()
                         pageStack.pop()
                     }
                     else {
-                        timerPage.state = "recovering"
-                        countDown = settings.breakTime
+                        if (settings.breakTime !== 0) {
+                            timerPage.state = "recovering"
+                            countDown = settings.breakTime
+                        }
+                        else {
+                            countDown = settings.workTime
+                        }
+
                     }
                 }
                 else {

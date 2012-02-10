@@ -1,7 +1,10 @@
 # Add more folders to ship with the application, here
 folder_01.source = qml/circuittimer
 folder_01.target = qml
-DEPLOYMENTFOLDERS = folder_01
+folder_02.source = images
+folder_02.target = /
+
+DEPLOYMENTFOLDERS = folder_01 folder_02
 
 config_files.files += circuittimer.conf
 config_files.path = /usr/share/policy/etc/pulse/xpolicy.conf.d

@@ -39,7 +39,7 @@ Page {
 
     Label {
         id: title
-        text: qsTr("Circuit Timer")
+        text: qsTr("Interval Timer")
         anchors {
             top: parent.top
             topMargin: Const.margin
@@ -47,6 +47,14 @@ Page {
             leftMargin: Const.margin
         }
         font.pixelSize: Const.fontLarge
+    }
+
+    AboutButton {
+        anchors {
+            top: parent.top
+            topMargin: 3
+            right: parent.right
+        }
     }
 
 
@@ -70,7 +78,8 @@ Page {
 
         TumblerButton {
             id: button3
-            text: qsTr("Rest for ") + Utils.toTime(settings.breakTime)
+            text: settings.breakTime !== 0 ? (qsTr("Rest for ") + Utils.toTime(settings.breakTime)) :
+                                             qsTr("No rest")
             width: Const.tumblerButtonWidth
             onClicked: recoveryDialog.open()
             enabled: settings.rounds > 1
@@ -148,4 +157,5 @@ Page {
              settings.breakTimeSec = second
          }
     }
+
 }
