@@ -5,19 +5,19 @@ import Settings 1.0
 TumblerDialog {
     id: root
 
-    property string selected: soundList.get(soundColumn.selectedIndex).name
+    property string selected: soundList.get(soundColumn.selectedIndex).value
 
     ListModel {
         id: soundList
 
         ListElement {
-            name: "None"
+            value: "None"
         }
         ListElement {
-            name: "Voice"
+            value: "Voice"
         }
         ListElement {
-            name: "Beep"
+            value: "Beep"
         }
     }
 

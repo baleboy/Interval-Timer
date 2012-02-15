@@ -8,6 +8,7 @@
 #define WORKTIMESEC_NAME "workTimeSec"
 #define BREAKTIMESEC_NAME "breakTimeSec"
 #define SOUNDS_NAME "sounds"
+#define VIBRA_NAME "vibra"
 
 #define ROUNDS_DEFAULT 5
 #define WORKTIMEMIN_DEFAULT 2
@@ -15,6 +16,7 @@
 #define BREAKTIMEMIN_DEFAULT 0
 #define BREAKTIMESEC_DEFAULT 10
 #define SOUNDS_DEFAULT 0
+#define VIBRA_DEFAULT true
 
 Settings::Settings(QObject *parent) :
     QObject(parent)
@@ -104,4 +106,15 @@ void  Settings::setSounds(int i)
 {
     m_settings->setValue(SOUNDS_NAME, QVariant(i));
     emit soundsChanged(i);
+}
+
+bool Settings::vibra()
+{
+    return m_settings->value(VIBRA_NAME, VIBRA_DEFAULT).toBool();
+}
+
+void  Settings::setVibra(bool b)
+{
+    m_settings->setValue(VIBRA_NAME, QVariant(b));
+    emit vibraChanged(b);
 }

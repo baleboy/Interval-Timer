@@ -11,6 +11,6 @@ var spacing = 26
 var buttonWidth = 200
 var tumblerButtonWidth = 300
 var margin = 16
-var bigMargin = 78
+var bigMargin = 60
 var smallMargin = 0
 var headerHeight = 72

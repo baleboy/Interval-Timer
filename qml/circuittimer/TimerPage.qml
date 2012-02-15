@@ -1,6 +1,6 @@
 import QtQuick 1.1
 import com.nokia.meego 1.0
-import com.nokia.extras 1.1
+import com.nokia.extras 1.0
 import QtMobility.systeminfo 1.1
 
 import Settings 1.0
@@ -175,7 +175,7 @@ Page {
 
             if (countDown === 0) {
                 if (timerPage.state === "exercising") {
-                    if (settings.breakTime !== 0 || repeatCount ===  settings.rounds)
+                    if ((settings.breakTime !== 0) || (repeatCount ===  settings.rounds))
                         playSound(stopSound)
                     else
                         playSound(switchSound)
@@ -192,6 +192,7 @@ Page {
                         }
                         else {
                             countDown = settings.workTime
+                            repeatCount++
                         }
 
                     }

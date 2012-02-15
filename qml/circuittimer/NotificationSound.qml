@@ -3,6 +3,7 @@ import QtMultimediaKit 1.1
 import QtMobility.feedback 1.1
 import QtMobility.systeminfo 1.1
 import Policy 1.0 // exported in main.cpp
+import Settings 1.0
 
 Item {
 
@@ -13,7 +14,7 @@ Item {
         if (deviceInfo.currentProfile !== DeviceInfo.SilentProfile)
             audioResource.acquire()
         else // don't acquire the resource or the music will break for nothing
-            if (deviceInfo.vibrationActive)
+            if (settings.vibra)
                 vibra.start()
     }
 
@@ -44,6 +45,6 @@ Item {
 
     Connections {
         target: audioResource
-        onAcquired: { console.log("playing") ; sound.play(); if (deviceInfo.vibrationActive) vibra.start() }
+        onAcquired: { console.log("playing") ; sound.play(); if (settings.vibra) vibra.start() }
     }
 }

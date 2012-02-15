@@ -23,6 +23,8 @@ class Settings : public QObject
 
     Q_PROPERTY (int sounds READ sounds WRITE setSounds NOTIFY soundsChanged)
 
+    Q_PROPERTY (bool vibra READ vibra WRITE setVibra NOTIFY vibraChanged)
+
 public:
     explicit Settings(QObject *parent = 0);
     ~Settings();
@@ -33,6 +35,7 @@ signals:
     void workTimeChanged(int value);
     void breakTimeChanged(int value);
     void soundsChanged(int value);
+    void vibraChanged(bool value);
 
 public slots:
 
@@ -53,6 +56,9 @@ public slots:
     void setWorkTimeSec(int sec);
     void setBreakTimeSec(int sec);
     void setSounds(int i);
+
+    bool vibra();
+    void setVibra(bool b);
 
 
 private:

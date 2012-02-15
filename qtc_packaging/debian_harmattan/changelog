@@ -1,3 +1,12 @@
+circuittimer (1.0.1) unstable; urgency=low
+
+  * Fixed compatibility with PR 1.0
+  * Added postinst script (restarts pulseaudio)
+  * Rounds increased correctly when rest time is 0
+  * 0 exercise time is not accepted
+
+ -- Francesco Balestrieri <bale@balenet.com>  Wed, 15 Feb 2012 10:20:05 +0200
+
 circuittimer (1.0.0) unstable; urgency=low
 
   * First release.

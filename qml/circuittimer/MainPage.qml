@@ -1,6 +1,6 @@
 import QtQuick 1.1
 import com.nokia.meego 1.0
-import com.nokia.extras 1.1
+import com.nokia.extras 1.0
 import Settings 1.0
 
 import "Constants.js" as Const
@@ -98,6 +98,14 @@ Page {
             width: Const.tumblerButtonWidth
             onClicked: soundDialog.open()
         }
+
+        LabeledSwitch {
+            id: switch1
+            text: qsTr("Vibration")
+            anchors.horizontalCenter: parent.horizontalCenter
+            onCheckedChanged: settings.vibra = checked
+            Component.onCompleted: checked = settings.vibra
+        }
     }
 
     TimeLabel {
@@ -138,8 +146,10 @@ Page {
          second: settings.workTimeSec
 
          onAccepted: {
-             settings.workTimeMin = minute
-             settings.workTimeSec = second
+             if (minute !== 0 || seconds !== 0) {
+                 settings.workTimeMin = minute
+                 settings.workTimeSec = second
+             }
          }
     }
 
