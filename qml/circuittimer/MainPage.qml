@@ -146,7 +146,7 @@ Page {
          second: settings.workTimeSec
 
          onAccepted: {
-             if (minute !== 0 || seconds !== 0) {
+             if ((minute !== 0) || (second !== 0)) {
                  settings.workTimeMin = minute
                  settings.workTimeSec = second
              }
