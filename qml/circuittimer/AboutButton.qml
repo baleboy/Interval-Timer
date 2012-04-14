@@ -32,9 +32,12 @@ ToolIcon {
         id: query
 
         icon: "images/icon.png"
-        titleText: "Interval Timer 1.1"
-        message: "(c) 2012 Francesco Balestrieri and Jarkko Autio\n\nSounds and icon by Eric Le Roux"
-
+        titleText: "Interval Timer 1.1.1"
+        message: "(c) 2012 Francesco Balestrieri and Jarkko Autio\n\n\
+Sounds and icon by Eric Le Roux\n\n\
+Licensed under GPLv3\n\
+Source code available at\n\
+github.com/baleboy/Interval-Timer"
         acceptButtonText: "Send Feedback"
         onAccepted: Qt.openUrlExternally("mailto:bale@balenet.com?subject=Feedback about Interval Timer 1.1")
         rejectButtonText: "Close"
