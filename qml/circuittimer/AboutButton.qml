@@ -32,11 +32,11 @@ ToolIcon {
         id: query
 
         icon: "images/icon.png"
-        titleText: "Interval Timer 1.0"
-        message: "(c) 2012 Francesco Balestrieri and Jarkko Autio\n\nVoice by Festival Speech Synthesiser"
+        titleText: "Interval Timer 1.1"
+        message: "(c) 2012 Francesco Balestrieri and Jarkko Autio\n\nSounds and icon by Eric Le Roux"
 
         acceptButtonText: "Send Feedback"
-        onAccepted: Qt.openUrlExternally("mailto:bale@balenet.com?subject=Feedback about Interval Timer 1.0")
+        onAccepted: Qt.openUrlExternally("mailto:bale@balenet.com?subject=Feedback about Interval Timer 1.1")
         rejectButtonText: "Close"
     }
 }

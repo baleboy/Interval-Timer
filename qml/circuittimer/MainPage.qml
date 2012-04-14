@@ -144,6 +144,7 @@ Page {
          fields: DateTime.Minutes | DateTime.Seconds
          minute: settings.workTimeMin
          second: settings.workTimeSec
+         hourMode: DateTime.TwentyFourHours
 
          onAccepted: {
              if ((minute !== 0) || (second !== 0)) {
@@ -161,6 +162,7 @@ Page {
          fields: DateTime.Minutes | DateTime.Seconds
          minute: settings.breakTimeMin
          second: settings.breakTimeSec
+         hourMode: DateTime.TwentyFourHours
 
          onAccepted: {
              settings.breakTimeMin = minute
